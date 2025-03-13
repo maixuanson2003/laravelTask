@@ -41,10 +41,10 @@ class BookingTK extends Command
             } else {
                 $this->info("Dữ liệu vào ngày $date:");
                 foreach ($results as $row) {
-                    $this->line("ID: {$row->id} - Tổng tiền: {$row->total_book} - Trạng thái: {$row->status}");
+                    $this->line("ID: {$row->id} - book_amount: {$row->total_book} - status: {$row->status}");
                 }
                 $size=sizeof($results);
-                $this->info("Tong so booking: $size");
+                $this->info("Tong so don muon sach: $size");
             }
         } catch (\Exception $e) {
             $this->error($e->getMessage());
