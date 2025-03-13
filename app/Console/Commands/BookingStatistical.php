@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
-class BookingTK extends Command
+class BookingStatistical extends Command
 {
     /**
      * The name and signature of the console command.
