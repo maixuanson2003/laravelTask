@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Criteria\UserCriteriaCriteria;
+use App\Exceptions\UserException;
 use App\Models\Product;
 use App\Models\User;
 use App\Repositories\UserRepositoryRepositoryEloquent;
@@ -24,11 +25,13 @@ class UserController extends Controller
     {
         $name = $request->input('name');
         $email = $request->input('email');
-        echo "ngsa";
 
         // Áp dụng UserCriteria
         $this->UserRepository->pushCriteria(UserCriteriaCriteria::class);
         $users = $this->UserRepository->getByCriteria(new UserCriteriaCriteria());
+        if(sizeof($users)==0){
+            throw new UserException('User Not Found');
+        }
 
         return response()->json($users);
 
