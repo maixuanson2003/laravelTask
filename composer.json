@@ -7,11 +7,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "darkaonline/l5-swagger": "^9.0",
         "intervention/image": "^3.11",
         "laravel/framework": "^12.0",
         "laravel/passport": "^12.0",
         "laravel/reverb": "^1.4",
+        "laravel/telescope": "^5.6",
         "laravel/tinker": "^2.10.1",
+        "predis/predis": "^2.3",
         "prettus/l5-repository": "^2.10",
         "pusher/pusher-php-server": "^7.2"
     },

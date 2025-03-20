@@ -26,11 +26,11 @@ class User extends Authenticatable
     public function Product(): HasMany{
         return $this->hasMany(Product::class);
     }
-//    public function Bookings(): HasMany
-//    {
-//        return $this->hasMany()
-//
-//    }
+    public function Bookings(): HasMany
+    {
+        return $this->hasMany(Booking::class);
+
+    }
     public function roles(): BelongsToMany
     {
         return $this->belongsToMany(Role::class, 'role_user');

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('book_id');
             $table->time("Day_set");
-            $table->bigInteger('amount_set');
+            $table->bigInteger('amount_set')->default(0);
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->timestamps();
         });

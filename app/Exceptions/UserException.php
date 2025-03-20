@@ -16,7 +16,7 @@ class UserException extends Exception
     {
         return response()->json([
             'error' => 'User Exception',
-            'message' => $this->getMessage()
+            'message' => "not found"
         ], 400);
     }
 

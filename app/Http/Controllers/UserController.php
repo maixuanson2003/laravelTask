@@ -44,7 +44,7 @@ class UserController extends Controller
 
         return response()->json(
             [
-            "user"=>User::with('roles')->get(),
+            "user"=>User::with(['Product','roles','Image'])->get(),
                 "users"=>$users
         ], Response::HTTP_OK);
     }
@@ -64,7 +64,7 @@ class UserController extends Controller
             $user->email=$validated['email'];
             $user->password=$validated['password'];
             $user->save();
-            $users = User::with('Product')->find($user->id);
+            $users = User::with(['Product'])->find($user->id);
             $user->roles()->attach([1,2,3]);
             $user->save();
 
@@ -106,19 +106,19 @@ class UserController extends Controller
     public function show($id)
     {
         try {
-            $user = User::with(['Product','roles'])->find($id);
+            $user = User::with(['Product','roles','Image'])->find($id);
             if (!$user) {
                 return response()->json([
                     'message' => 'User not found'
                 ], Response::HTTP_NOT_FOUND);
             }
-            $user->name="ngu";
-            $user->roles()->detach(2);
-            $user->save();
+//            $user->name="ngu";
+//            $user->roles()->detach(2);
+//            $user->save();
 
             return response()->json([
                 'user'=>$user,
-                'check'=>$user->roles[0]->name
+                'check'=>"ss"
             ], Response::HTTP_OK);
         } catch (\Exception $e) {
             return response()->json([

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('create_year');
-            $table->integer('amount');
+            $table->integer('amount')->default(0);
             $table->timestamps();
         });
     }

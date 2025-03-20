@@ -19,7 +19,7 @@ class BookingCreated implements ShouldBroadcast
      * Create a new event instance.
      */
     public $booking;
-    public function __construct(Booking $booking)
+    public function __construct($booking)
     {
         $this->booking = $booking;
     }

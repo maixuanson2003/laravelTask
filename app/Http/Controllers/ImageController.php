@@ -13,11 +13,6 @@ class ImageController extends Controller
 {
     public function ImageUpload(ImageUploadRequest $request): \Illuminate\Http\JsonResponse
     {
-//        $image = $request->validate(
-//            [
-//                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//            ]
-//        );
         $imageManager= new ImageManager(Driver::class);
         $imageFile=$request->file("image");
         $user_id=$request->query( 'user_id');
