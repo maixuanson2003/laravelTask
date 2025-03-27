@@ -28,7 +28,6 @@ class BookingStatistical extends Command
     public function handle()
     {
         $dateInput = $this->argument('date');
-
         try {
             $date = Carbon::parse($dateInput)->toDateString();
             $this->info($date);

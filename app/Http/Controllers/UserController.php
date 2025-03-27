@@ -118,7 +118,7 @@ class UserController extends Controller
 
             return response()->json([
                 'user'=>$user,
-                'check'=>"ss"
+                'check'=>"ok"
             ], Response::HTTP_OK);
         } catch (\Exception $e) {
             return response()->json([

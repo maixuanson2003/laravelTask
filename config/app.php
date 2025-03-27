@@ -122,8 +122,10 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
-    'providers' => [
-        L5Swagger\L5SwaggerServiceProvider::class,
-    ],
+    'aliases' => [
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+    ]
+
 
 ];

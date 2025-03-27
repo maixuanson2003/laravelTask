@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
     App\Providers\AppServiceProvider::class,
     App\Providers\TelescopeServiceProvider::class,
-];
+);
